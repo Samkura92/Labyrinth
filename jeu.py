@@ -43,8 +43,10 @@ while en_cours:
                 index_couleur = (index_couleur + 1) % len(couleurs)
     ecran.fill((0, 0, 0))
     laby_dessin(ecran, maze.grid)
-    if niveau >= 1:
-        brouillard(ecran, maze.grid, joueur_x, joueur_y)
+    if niveau == 1:
+        brouillard(ecran, maze.grid, joueur_x, joueur_y, 2)
+    if niveau == 2:
+        brouillard(ecran, maze.grid, joueur_x, joueur_y, 1)
     index_a = 450
     for val in affiche:
         texte = police.render(val, True, (255, 255, 255))

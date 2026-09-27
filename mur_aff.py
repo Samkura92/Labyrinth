@@ -51,12 +51,12 @@ def creation_niveau(niveau):
     return maze
 
 
-def brouillard(ecran, grid, joueur_x, joueur_y):
+def brouillard(ecran, grid, joueur_x, joueur_y, distance):
     for y in range(len(grid)):
         for x in range(len(grid[0])):
             px = x * 30
             py = y * 30
             distance_x = abs(x - joueur_x)
             distance_y = abs(y - joueur_y)
-            if distance_x > 2 or distance_y > 2:
+            if distance_x > distance or distance_y > distance:
                 pygame.draw.rect(ecran, (0, 0, 0), (px, py, 30, 30))
